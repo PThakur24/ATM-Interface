@@ -19,8 +19,7 @@ Implement basic error handling for invalid user IDs, incorrect passwords, insuff
 3. Class Diagram
 The high-level design consists of three main classes: AccountHolder, Account, and Bank. The relationships between these classes are represented in the following class diagram:
 
-sql
-Copy code
+
       +-------------------------------------------------------+
       |   Account                                             |
       +-------------------------------------------------------+
