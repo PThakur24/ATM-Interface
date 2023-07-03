@@ -1,0 +1,82 @@
+Wireframe Document
+
+Welcome Screen
+----------------------------------------
+|                                      |
+|           Welcome to XYZ Bank        |
+|                                      |
+|         Please Log In to Continue    |
+|                                      |
+|         UserID:   _______________    |
+|                                      |
+|         Password: _______________    |
+|                                      |
+|         [Login]                      |
+|                                      |
+----------------------------------------
+
+Main Menu Screen
+----------------------------------------
+|                                      |
+|         Hello Payal                  |
+|                                      |
+|         Bank Menu:                   |
+|                                      |
+|         1. Deposit                   |
+|         2. Withdraw                  |
+|         3. Transfer                  |
+|         4. Transaction History       |
+|         5. Logout                    |
+|                                      |
+|         Enter your choice: __        |
+|                                      |
+----------------------------------------
+
+Deposit Screen
+----------------------------------------
+|                                      |
+|         Deposit Money                |
+|                                      |
+|         Enter amount to deposit: __  |
+|                                      |
+|         Successfully deposited       |            |
+|                                      |
+----------------------------------------
+
+Withdrawal Screen
+----------------------------------------
+|                                      |
+|         Withdraw Money               |
+|                                      |
+|         Enter amount to withdraw: __ |
+|                                      |
+|         Successfully Withdraw        |
+|                                      |
+----------------------------------------
+
+Transfer Screen
+----------------------------------------
+|                                      |
+|         Transfer Money               |
+|                                      |
+|         Enter UserID: __             |
+|                                      |
+|         Enter amount to transfer: __ |
+|                                      |
+|         Successfully Transfered      |
+|                                      |
+----------------------------------------
+
+Transaction History Screen
+----------------------------------------
+|                                      |
+|         Transaction History          |
+|                                      |
+|         [Transaction 1]              |
+|         [Transaction 2]              |
+|         [Transaction 3]              |
+|         ...                          |
+|                                      |
+|                                      |
+|                                      |
+----------------------------------------
