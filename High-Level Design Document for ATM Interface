@@ -21,69 +21,69 @@ The high-level design consists of three main classes: AccountHolder, Account, an
 
 sql
 Copy code
-      +---------------+
-      |   Account     |
-      +---------------+
-      | - balance     |
-      | - transactionHistory: List<BankTransaction> |
-      +---------------+
-      | + Account(double balance)           |
-      | + Deposite(double amount)            |
-      | + Withdraw(double amount)            |
-      | + getBalance(): double               |
-      | + ShowTransactionHistory()           |
+      +-------------------------------------------------------+
+      |   Account                                             |
+      +-------------------------------------------------------+
+      | - balance                                             |
+      | - transactionHistory: List<BankTransaction>           |
+      +-------------------------------------------------------+
+      | + Account(double balance)                             |
+      | + Deposite(double amount)                             |
+      | + Withdraw(double amount)                             |
+      | + getBalance(): double                                |
+      | + ShowTransactionHistory()                            |
       | + Transfer(double amount, Account destinationAccount) |
-      +---------------+
+      +-------------------------------------------------------+
                         ^
                         |
                         |
                         |
                         |
                         v
-      +---------------+
-      | BankTransaction |
-      +---------------+
-      | - type: String  |
-      | - amount: double|
-      +---------------+
+      +-----------------------------------------------+
+      | BankTransaction                               |
+      +-----------------------------------------------+
+      | - type: String                                |
+      | - amount: double                              |
+      +-----------------------------------------------+
       | + BankTransaction(String type, double amount) |
-      +---------------+
+      +-----------------------------------------------+
                         ^
                         |
                         |
                         |
                         |
                         v
-      +---------------+
-      |  AccountHolder |
-      +---------------+
-      | - userID: String   |
-      | - password: String |
-      | - account: Account |
-      | - id: int          |
-      +---------------+
+      +--------------------------------------------------------------------------+
+      |  AccountHolder                                                           |
+      +--------------------------------------------------------------------------+
+      | - userID: String                                                         |
+      | - password: String                                                       |
+      | - account: Account                                                       |
+      | - id: int                                                                |
+      +--------------------------------------------------------------------------+
       | + AccountHolder(int id, String userID, String password, Account account) |
-      | + getuserID(): String                                                   |
-      | + getAccount(): Account                                                 |
-      | + getId(): int                                                          |
-      | + setId(int id)                                                         |
-      | + validateUser(String userID, String password): boolean               |
-      +---------------+
+      | + getuserID(): String                                                    |
+      | + getAccount(): Account                                                  |
+      | + getId(): int                                                           |
+      | + setId(int id)                                                          |
+      | + validateUser(String userID, String password): boolean                  |
+      +--------------------------------------------------------------------------+
                         ^
                         |
                         |
                         |
                         |
                         v
-      +---------------+
-      |      Bank     |
-      +---------------+
-      | - accountHolders: List<AccountHolder> |
-      +---------------+
-      | + Bank()                              |
-      | + AddAccountHolder(AccountHolder accountHolder) |
-      | + getAccountHolder(String userID, String password): AccountHolder |
-      +---------------+
+      +--------------------------------------------------------------------+
+      |      Bank                                                          |
+      +--------------------------------------------------------------------+
+      | - accountHolders: List<AccountHolder>                              |
+      +--------------------------------------------------------------------+
+      | + Bank()                                                           |
+      | + AddAccountHolder(AccountHolder accountHolder)                    |
+      | + getAccountHolder(String userID, String password): AccountHolder  |
+      +--------------------------------------------------------------------+
 4. Class Descriptions
 
 4.1. Account
