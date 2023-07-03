@@ -127,7 +127,7 @@ public class ATM_Interface {
 		List<Account> acc=new ArrayList<>();
 		int count=0,accv=0;
 		while(true) {
-			System.out.println("Welcome User, Please enter your details");
+			System.out.println("Welcome User, Please enter your details to create account");
 			System.out.println("Enter UserID to create: ");
 			String n=sc.nextLine();
 			System.out.println("Create Password : ")
@@ -151,6 +151,7 @@ public class ATM_Interface {
 		String password;
 		
 		while(true) {
+			System.out.println("Please enter your details tp Log In");
 			System.out.println("enter userID");
 			userID=sc.next();
 			System.out.println("Enter Password");
