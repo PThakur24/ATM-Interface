@@ -1,0 +1,58 @@
+Low-Level Design Document for ATM Interface
+
+1. Introduction
+The ATM Interface is a Java program that simulates an Automated Teller Machine (ATM) system. This low-level design document provides a detailed description of the classes, methods, and their interactions to implement the required functionality.
+
+2. Class Descriptions
+2.1. Account Class
+Attributes
+balance (double): Represents the current balance in the account.
+transactionHistory (List<BankTransaction>): Stores the transaction history of the account.
+Methods
+Account(double balance): Initializes the account with the specified balance.
+deposit(double amount): Deposits the specified amount into the account and adds a deposit transaction to the transaction history.
+withdraw(double amount): Withdraws the specified amount from the account if the balance is sufficient and adds a withdrawal transaction to the transaction history.
+getBalance(): double: Retrieves the current balance.
+showTransactionHistory(): Displays the transaction history.
+
+2.2. BankTransaction Class
+Attributes
+type (String): Represents the type of the transaction.
+amount (double): Represents the amount involved in the transaction.
+Methods
+BankTransaction(String type, double amount): Initializes a new bank transaction with the given type and amount.
+toString(): String: Returns a string representation of the transaction.
+
+2.3. AccountHolder Class
+Attributes
+userID (String): Represents the user ID of the account holder.
+password (String): Represents the password of the account holder.
+account (Account): Represents the associated bank account.
+id (int): Represents the unique identifier of the account holder.
+Methods
+AccountHolder(int id, String userID, String password, Account account): Initializes an account holder with the provided ID, user ID, password, and associated account.
+getUserID(): String: Retrieves the user ID of the account holder.
+getAccount(): Account: Retrieves the associated bank account.
+getId(): int: Retrieves the unique identifier of the account holder.
+setId(int id): Sets the unique identifier of the account holder.
+validateUser(String userID, String password): boolean: Validates the provided user ID and password against the account holder's credentials.
+
+2.4. Bank Class
+Attributes
+accountHolders (List<AccountHolder>): Stores the account holders in the bank.
+Methods
+Bank(): Initializes a new bank object.
+addAccountHolder(AccountHolder accountHolder): Adds an account holder to the bank's list of account holders.
+getAccountHolder(String userID, String password): AccountHolder: Retrieves the account holder associated with the provided user ID and password.
+
+3. Class Interactions
+The interaction between the classes in the ATM Interface program is as follows:
+
+The Bank class manages a list of AccountHolder objects.
+An AccountHolder object contains an Account object representing the associated bank account.
+The Account object maintains the current balance and transaction history using the balance attribute and the transactionHistory list.
+The Account object performs deposit, withdrawal, and transfer operations on the balance and updates the transaction history accordingly.
+The BankTransaction class represents individual transactions in the Account object and provides a string representation of the transaction.
+
+4. Conclusion
+This low-level design document provides a detailed description of the classes, their attributes, and methods in the ATM Interface program. It outlines the interactions between the classes and explains how they work together
