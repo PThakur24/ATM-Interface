@@ -125,12 +125,12 @@ public class ATM_Interface {
 		Bank b=new Bank();
 		List<AccountHolder> ah=new ArrayList<>();
 		List<Account> acc=new ArrayList<>();
-		int count=0,accv=0;
+int count=0,accv=0;
 		while(true) {
 			System.out.println("Welcome User, Please enter your details to create account");
 			System.out.println("Enter UserID to create: ");
 			String n=sc.nextLine();
-			System.out.println("Create Password : ")
+			System.out.println("Create Password : ");
 			String p=sc.nextLine();
 			acc.add(new Account(1000));
 			ah.add(new AccountHolder(++count,n,p,acc.get(accv++)));
@@ -191,17 +191,20 @@ public class ATM_Interface {
 					
 				case 3:
 					System.out.println("Transfer Money");
-					System.out.println("Enter ID to ytransfer Money");
+					System.out.println("Enter ID to transfer Money");
 					int i=sc.nextInt();
 					System.out.println("Enter amount to transfer");
 					double amountToTransfer=sc.nextDouble();
-					for(AccountHolder a:ah) {
-						if(a.getId()==i) {
-						ah1.getAccount().Transfer(amountToTransfer, acc.get(i-1));						}						
+					//sc.nextLine();
+//					for(AccountHolder a:ah) {
+//					if(a.getId()==i) {
+					ah1.getAccount().Transfer(amountToTransfer, acc.get(i-1));
+					System.out.println("Transfered Successfully");
+					
+//						}						
 					break;
 					
 				case 4:
-					
 					System.out.println("Transaction History");
 					ah1.getAccount().ShowTransactionHistory();
 					break;
@@ -223,6 +226,3 @@ public class ATM_Interface {
 	
 
 	}}
-
-
-
