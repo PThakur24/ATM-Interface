@@ -1,0 +1,145 @@
+High-Level Design Document for ATM Interface
+
+
+1. Introduction
+The ATM Interface is a Java program that provides a simple implementation of an ATM (Automated Teller Machine) system. It allows users to create bank accounts, perform banking operations such as depositing, withdrawing, transferring money, and view transaction history. The program is designed using object-oriented principles to ensure code reusability, maintainability, and scalability.
+
+2. Requirements
+The ATM Interface must fulfill the following requirements:
+
+Allow users to create a bank account by providing a user ID, password, and initial balance.
+Allow users to log in using their user ID and password.
+Provide the following banking operations:
+Depositing money into the account.
+Withdrawing money from the account.
+Transferring money to another account.
+Viewing transaction history.
+Implement basic error handling for invalid user IDs, incorrect passwords, insufficient account balance, etc.
+
+3. Class Diagram
+The high-level design consists of three main classes: AccountHolder, Account, and Bank. The relationships between these classes are represented in the following class diagram:
+
+sql
+Copy code
+      +---------------+
+      |   Account     |
+      +---------------+
+      | - balance     |
+      | - transactionHistory: List<BankTransaction> |
+      +---------------+
+      | + Account(double balance)           |
+      | + Deposite(double amount)            |
+      | + Withdraw(double amount)            |
+      | + getBalance(): double               |
+      | + ShowTransactionHistory()           |
+      | + Transfer(double amount, Account destinationAccount) |
+      +---------------+
+                        ^
+                        |
+                        |
+                        |
+                        |
+                        v
+      +---------------+
+      | BankTransaction |
+      +---------------+
+      | - type: String  |
+      | - amount: double|
+      +---------------+
+      | + BankTransaction(String type, double amount) |
+      +---------------+
+                        ^
+                        |
+                        |
+                        |
+                        |
+                        v
+      +---------------+
+      |  AccountHolder |
+      +---------------+
+      | - userID: String   |
+      | - password: String |
+      | - account: Account |
+      | - id: int          |
+      +---------------+
+      | + AccountHolder(int id, String userID, String password, Account account) |
+      | + getuserID(): String                                                   |
+      | + getAccount(): Account                                                 |
+      | + getId(): int                                                          |
+      | + setId(int id)                                                         |
+      | + validateUser(String userID, String password): boolean               |
+      +---------------+
+                        ^
+                        |
+                        |
+                        |
+                        |
+                        v
+      +---------------+
+      |      Bank     |
+      +---------------+
+      | - accountHolders: List<AccountHolder> |
+      +---------------+
+      | + Bank()                              |
+      | + AddAccountHolder(AccountHolder accountHolder) |
+      | + getAccountHolder(String userID, String password): AccountHolder |
+      +---------------+
+4. Class Descriptions
+
+4.1. Account
+The Account class represents a bank account. It stores the account balance and maintains a list of transactions.
+
+Attributes:
+
+balance (private double): Represents the current balance in the account.
+transactionHistory (private List<BankTransaction>): Represents the list of transactions made on the account.
+Methods:
+
+Account(double balance): Constructor to create an account with the given initial balance.
+Deposite(double amount): Deposits the specified amount into the account and adds a deposit transaction to the transaction history.
+Withdraw(double amount): Withdraws the specified amount from the account if the balance is sufficient and adds a withdrawal transaction to the transaction history.
+getBalance(): double: Retrieves the current account balance.
+ShowTransactionHistory(): Displays the transaction history.
+Transfer(double amount, Account destinationAccount): Transfers the specified amount from the current account to the destination account if the balance is sufficient and adds a transfer transaction to the transaction history.
+4.2. BankTransaction
+The BankTransaction class represents a single transaction in the bank account. It stores information about the transaction type (e.g., deposit, withdrawal, transfer) and the transaction amount.
+
+Attributes:
+
+type (private String): Represents the type of the transaction.
+amount (private double): Represents the amount involved in the transaction.
+Methods:
+
+BankTransaction(String type, double amount): Constructor to create a new bank transaction with the given type and amount.
+
+4.3. AccountHolder
+The AccountHolder class represents a bank account holder. It contains information about the user ID, password, associated account, and a unique identifier for the account holder.
+
+Attributes:
+
+userID (private String): Represents the user ID of the account holder.
+password (private String): Represents the password of the account holder.
+account (private Account): Represents the associated bank account.
+id (private int): Represents the unique identifier of the account holder.
+Methods:
+
+AccountHolder(int id, String userID, String password, Account account): Constructor to create an account holder with the given ID, user ID, password, and associated account.
+getuserID(): String: Retrieves the user ID of the account holder.
+getAccount(): Account: Retrieves the associated account.
+getId(): int: Retrieves the unique identifier of the account holder.
+setId(int id): Sets the unique identifier of the account holder.
+validateUser(String userID, String password): boolean: Validates the provided user ID and password against the account holder's credentials.
+
+4.4. Bank
+The Bank class represents a bank and manages a list of account holders.
+
+Attributes:
+
+accountHolders (private List<AccountHolder>): Represents the list of account holders in the bank.
+Methods:
+
+Bank(): Constructor to create a bank object.
+AddAccountHolder(AccountHolder accountHolder): Adds an account holder to the bank's list.
+getAccountHolder(String userID, String password): AccountHolder: Retrieves an account holder based on the provided user ID and password.
+5. Conclusion
+This high-level design document provides an overview of the ATM Interface program's structure and class relationships. It describes the main classes involved, their attributes, and methods. The design ensures modularity, encapsulation, and separation of concerns, making the code easier to understand, extend, and maintain.
