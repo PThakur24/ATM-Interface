@@ -127,9 +127,10 @@ public class ATM_Interface {
 		List<Account> acc=new ArrayList<>();
 		int count=0,accv=0;
 		while(true) {
-			System.out.println("Enter UserID : ");
+			System.out.println("Welcome User, Please enter your details");
+			System.out.println("Enter UserID to create: ");
 			String n=sc.nextLine();
-			System.out.println("Enter Password : ")
+			System.out.println("Create Password : ")
 			String p=sc.nextLine();
 			acc.add(new Account(1000));
 			ah.add(new AccountHolder(++count,n,p,acc.get(accv++)));
