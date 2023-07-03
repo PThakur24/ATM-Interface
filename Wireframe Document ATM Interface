@@ -1,19 +1,36 @@
 Wireframe Document
 
 Welcome Screen
-----------------------------------------
-|                                      |
-|           Welcome to XYZ Bank        |
-|                                      |
-|         Please Log In to Continue    |
-|                                      |
-|         UserID:   _______________    |
-|                                      |
-|         Password: _______________    |
-|                                      |
-|         [Login]                      |
-|                                      |
-----------------------------------------
+-----------------------------------------------------
+|                                                   |
+|         Welcome User, Please enter your           |
+|         details to create account                 |
+|                                                   |
+|                                                   |
+|                                                   |
+|         UserID:   _______________                 |
+|                                                   |
+|         Password: _______________                 |
+|                                                   |
+|       Press 1 to Continue                         |
+|       Press 0 to Stop                             |
+|                                                   |
+-----------------------------------------------------
+
+Login Screen
+-----------------------------------------------------
+|                                                   |
+|         Please enter your details to  Log In      |
+|                                                   |
+|                                                   |
+|                                                   |
+|         UserID:   _______________                 |
+|                                                   |
+|         Password: _______________                 |
+|                                                   |
+|                                                   |
+|                                                   |
+-----------------------------------------------------
 
 Main Menu Screen
 ----------------------------------------
