@@ -1,0 +1,45 @@
+Architecture Design Document for ATM Interface
+1. Introduction
+The ATM Interface is a Java program that simulates an Automated Teller Machine (ATM) system. This Architecture Design Document provides an overview of the system's architecture, including its components, modules, and their interactions. It aims to ensure modularity, scalability, and maintainability of the system.
+
+2. System Architecture
+The ATM Interface system follows a layered architecture to separate concerns and promote reusability. The main architectural components are as follows:
+
+2.1. Presentation Layer
+The presentation layer is responsible for interacting with the user and presenting the user interface. It comprises the ATM_Interface class, which uses the Scanner class for input and output through the console. This layer handles user inputs, displays menus, and communicates with the application layer to execute user requests.
+
+2.2. Application Layer
+The application layer contains the core logic of the ATM Interface. It manages account holders, bank accounts, transactions, and their interactions. The main components in this layer are:
+
+Bank: Represents the bank and manages a list of account holders.
+AccountHolder: Represents a bank account holder and their associated account.
+Account: Represents a bank account and manages the balance and transaction history.
+BankTransaction: Represents individual transactions in the bank account.
+2.3. Data Access Layer
+As the ATM Interface is a simple console application, there is no explicit data access layer. Data, such as account holder information and transaction history, is stored in memory and managed within the application layer.
+
+3. Component Descriptions
+3.1. Presentation Layer
+Components:
+ATM_Interface: The main class that interacts with the user through the console. It displays menus, receives user input, and communicates with the application layer.
+3.2. Application Layer
+Components:
+Bank: Manages the list of account holders and provides methods to add new account holders and retrieve account holders based on their user ID and password.
+AccountHolder: Represents a bank account holder and contains their user ID, password, associated bank account, and unique identifier (ID).
+Account: Represents a bank account and manages the balance and transaction history. It provides methods for deposit, withdrawal, transfer, and transaction history retrieval.
+BankTransaction: Represents a single transaction in the bank account and contains information about the transaction type (e.g., deposit, withdrawal, transfer) and amount.
+3.3. Data Access Layer
+As mentioned earlier, there is no explicit data access layer for this console application. The data is stored in memory and managed within the application layer.
+
+4. Design Considerations
+4.1. Modularity
+The architecture design emphasizes modularity, ensuring that each component has a clear and well-defined responsibility. This allows for easier maintenance, debugging, and future enhancements.
+
+4.2. Encapsulation
+Each class is designed with appropriate access modifiers to encapsulate its data and behavior, preventing direct access to internal details from outside classes.
+
+4.3. Separation of Concerns
+The layered architecture promotes the separation of concerns, with each layer focusing on its specific tasks. The presentation layer handles user interactions, the application layer manages the core logic, and the data access layer (not explicitly present) would handle data storage and retrieval if needed.
+
+5. Conclusion
+The Architecture Design Document provides an overview of the ATM Interface system's architecture, including its components and their interactions. The layered architecture promotes modularity, encapsulation, and separation of concerns, making the system easy to understand, maintain, and extend. The design considers simplicity and the specific requirements of the console-based ATM Interface program.
