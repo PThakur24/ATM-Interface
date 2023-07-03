@@ -125,11 +125,14 @@ public class ATM_Interface {
 		Bank b=new Bank();
 		List<AccountHolder> ah=new ArrayList<>();
 		List<Account> acc=new ArrayList<>();
-int count=0,accv=0;
+		int count=0,accv=0;
 		while(true) {
-			System.out.println("Enter Name");
+			System.out.println("Enter UserID : ");
+			String n=sc.nextLine();
+			System.out.println("Enter Password : ")
+			String p=sc.nextLine();
 			acc.add(new Account(1000));
-			ah.add(new AccountHolder(++count,sc.nextLine(),sc.nextLine(),acc.get(accv++)));
+			ah.add(new AccountHolder(++count,n,p,acc.get(accv++)));
 			System.out.println("Enter 1 to continue else press 0 ");
 			if(sc.nextInt()==1) {
 				sc.nextLine();
@@ -156,6 +159,7 @@ int count=0,accv=0;
 			
 			AccountHolder ah1=b.getAccountHolder(userID, password);
 			try{while(ah1.getAccount()!=null) {
+			System.out.println("Hello "+userID);
 			System.out.println("Bank Menu :");
 			System.out.println("For Deposite-enter 1");
 			System.out.println("For Withdraw-enter 2");
@@ -168,32 +172,35 @@ int count=0,accv=0;
 			Account d;
 			switch(choice) {
 				case 1:
+					System.out.println("Deposite");
 					System.out.println("Enter amount to deposite : ");
 					amount=sc.nextDouble();
 					ah1.getAccount().Deposite(amount);
+					System.out.println("Successfully deposited");
 					break;
 					
 				case 2:
+					System.out.println("Withdraw");
 					System.out.println("Enter amount to withdraw : ");
 					amount=sc.nextDouble();
 					ah1.getAccount().Withdraw(amount);
+					System.out.println("Successfully withdraw");
 					break;
 					
 				case 3:
-						System.out.println("Enter ID to ytransfer Money");
-						int i=sc.nextInt();
-						System.out.println(i);
-					
-						System.out.println("Enter amount to transfer");
-						double amountToTransfer=sc.nextDouble();
-						//sc.nextLine();
-//						for(AccountHolder a:ah) {
-//						if(a.getId()==i) {
-						ah1.getAccount().Transfer(amountToTransfer, acc.get(i-1));
-//						}						
+					System.out.println("Transfer Money");
+					System.out.println("Enter ID to ytransfer Money");
+					int i=sc.nextInt();
+					System.out.println("Enter amount to transfer");
+					double amountToTransfer=sc.nextDouble();
+					for(AccountHolder a:ah) {
+						if(a.getId()==i) {
+						ah1.getAccount().Transfer(amountToTransfer, acc.get(i-1));						}						
 					break;
 					
 				case 4:
+					
+					System.out.println("Transaction History");
 					ah1.getAccount().ShowTransactionHistory();
 					break;
 				case 5:
